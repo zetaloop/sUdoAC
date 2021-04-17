@@ -13,7 +13,7 @@ if if%a:~0,1%%a:~-1%==if"" set a=%a:~1,-1%
 %2 schtasks /query /tn sUdoAC_%username%>nul 2>nul
 %2 if %errorlevel%==0 echo ÒÑÌø¹ý UAC
 %2 if %errorlevel%==0 echo "%~s0","%aaa%","%cd%","",^1>%tmp%\~sUdoAC_task%random%%random%.TMP&schtasks /run /tn sUdoAC_%username%>nul&goto :EOF
-%2 mshta vbscript:CreateObject("Shell.Application").ShellExecute("%~s0","%aaa%","%cd%","runas",1)(window.close)&goto :EOF
+%2 mshta vbscript:CreateObject("Shell.Application").ShellExecute("%~s0","- ::","%cd%","runas",1)(window.close)&goto :EOF
 set a?=n
 if not no"%a%"==no"-" set a?=y
 
